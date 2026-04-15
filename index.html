@@ -4,6 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Farmacia Río Itata - Trabaja con nosotros</title>
+  <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
   <style>
     :root {
       --primary: #00a79d;
@@ -222,6 +223,17 @@
       margin-top: 16px;
     }
 
+    .error-captcha {
+      display: none;
+      color: #c0392b;
+      background: #fdecea;
+      border: 1.5px solid #e74c3c;
+      border-radius: 8px;
+      padding: 10px 14px;
+      font-size: 0.88em;
+      width: 100%;
+    }
+
     /* --- Mensaje de éxito --- */
     #mensaje-exito {
       display: none;
@@ -361,6 +373,14 @@
         <!-- Honeypot: invisible para humanos, los bots lo llenan y Formspree descarta el envío -->
         <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off">
 
+        <!-- Turnstile CAPTCHA con clave propia -->
+        <div class="form-group full">
+          <div class="cf-turnstile" data-sitekey="bosquesrioitata_ricardo#" data-theme="light"></div>
+          <div class="error-captcha" id="error-captcha">
+            ⚠️ Oops! Turnstile failed. Please complete Turnstile before submitting.
+          </div>
+        </div>
+
         <!-- Botón -->
         <div class="form-group full">
           <button type="submit" class="btn-enviar">Enviar postulación</button>
@@ -405,6 +425,19 @@
       opt.textContent = cargo;
       selectPuesto.appendChild(opt);
     });
+  });
+
+  // Validar Turnstile antes de enviar
+  document.getElementById('form-postulacion').addEventListener('submit', function (e) {
+    const token = document.querySelector('[name="cf-turnstile-response"]');
+    const errorBox = document.getElementById('error-captcha');
+    if (!token || !token.value) {
+      e.preventDefault();
+      errorBox.style.display = 'block';
+      errorBox.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    } else {
+      errorBox.style.display = 'none';
+    }
   });
 
   // Mostrar nombre del archivo seleccionado
