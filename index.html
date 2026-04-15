@@ -329,10 +329,13 @@
           <input type="text" id="nombres" name="nombres" placeholder="Tu nombre completo" required>
         </div>
 
-        <!-- Edad -->
+        <!-- Teléfono -->
         <div class="form-group">
-          <label for="edad">Edad *</label>
-          <input type="number" id="edad" name="edad" placeholder="Ej: 28" min="18" max="70" required>
+          <label for="telefono">Número de contacto *</label>
+          <div style="display:flex; gap:8px; align-items:center;">
+            <span style="padding:11px 12px; background:#e8f7f6; border:1.5px solid #cce8e7; border-radius:8px; font-weight:600; white-space:nowrap;">+56</span>
+            <input type="tel" id="telefono" name="telefono" placeholder="9 1234 5678" maxlength="9" pattern="[0-9]{9}" required style="flex:1;">
+          </div>
         </div>
 
         <!-- Correo -->
