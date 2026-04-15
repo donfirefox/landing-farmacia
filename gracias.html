@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Farmacia Río Itata - ¡Gracias por postular!</title>
+  <style>
+    :root {
+      --primary: #00a79d;
+      --primary-dark: #008b85;
+      --text: #003f3f;
+      --bg: #e3f8f7;
+      --white: #ffffff;
+      --border: #c5e8e6;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: var(--bg);
+      color: var(--text);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    header {
+      background-color: var(--white);
+      padding: 20px;
+      text-align: center;
+      border-bottom: 3px solid var(--primary);
+      box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    }
+
+    header img {
+      max-width: 150px;
+      height: auto;
+    }
+
+    main {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 40px 20px;
+    }
+
+    .card {
+      background: var(--white);
+      border-radius: 16px;
+      padding: 50px 40px;
+      border: 2px solid var(--border);
+      box-shadow: 0 4px 16px rgba(0,0,0,0.09);
+      text-align: center;
+      max-width: 520px;
+      width: 100%;
+    }
+
+    .icono {
+      font-size: 4em;
+      margin-bottom: 20px;
+    }
+
+    h1 {
+      font-size: 1.9em;
+      color: var(--primary);
+      margin-bottom: 14px;
+    }
+
+    p {
+      font-size: 1.05em;
+      line-height: 1.7;
+      color: #444;
+      margin-bottom: 10px;
+    }
+
+    .volver {
+      display: inline-block;
+      margin-top: 28px;
+      background-color: var(--primary);
+      color: white;
+      padding: 12px 28px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-size: 0.95em;
+      font-weight: 600;
+      transition: background-color 0.3s;
+    }
+
+    .volver:hover { background-color: var(--primary-dark); }
+
+    @media (max-width: 480px) {
+      .card { padding: 36px 20px; }
+      h1 { font-size: 1.5em; }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <img src="logo.jpg" alt="Farmacia Río Itata">
+</header>
+
+<main>
+  <div class="card">
+    <div class="icono">✅</div>
+    <h1>¡Gracias por postular!</h1>
+    <p>Hemos recibido tu información y CV correctamente.</p>
+    <p>Estaremos en contacto contigo a la brevedad si tu perfil se ajusta a nuestras necesidades.</p>
+    <a class="volver" href="index.html">Volver al inicio</a>
+  </div>
+</main>
+
+</body>
+</html>
